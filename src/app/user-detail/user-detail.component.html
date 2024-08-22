@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}">
+  <mat-card-content>
+    <p>Email: {{ user.email }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()" class="btn btn-primary">Back</button>
+  </mat-card-actions>
+</mat-card>
+
+
+

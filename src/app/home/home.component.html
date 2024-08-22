@@ -1,0 +1,11 @@
+<div class="mx-auto bg-body-secondary d-flex justify-content-center align-items-center py-5 rounded-3" style="width: 76%">
+  <div class="" style="width: 80%">
+    <mat-card *ngFor="let user of users" (click)="viewUser(user.id)" class="h-20 p-3 shadow my-2 bg-body-tertiary rounded-3">
+      <mat-card-header class="flex flex-wrap items-center">
+        <img mat-card-avatar [src]="user.avatar" alt="{{user.first_name}}">
+        <mat-card-title class="font-extrabold capitalize fw-medium text-body-secondary">{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+    <mat-paginator [length]="totalUsers" [pageSize]="6" (page)="onPageChange($event)"></mat-paginator>
+  </div>
+</div>
