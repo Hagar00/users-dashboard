@@ -1,15 +1,20 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+<mat-card class="shadow  bg-body-tertiary rounded-3 py-5 m-auto px-4" style="width: 40%">
+  <mat-card-header class="d-flex flex-column align-items-center">
+    <mat-card-title class="font-extrabold capitalize fw-medium text-body-secondary text-center">
+      {{ user.first_name }} {{ user.last_name }}
+    </mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}">
-  <mat-card-content>
-    <p>Email: {{ user.email }}</p>
+
+  <div class="text-center">
+    <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}"
+         class="rounded-circle img-fluid img-thumbnail w-25 w-md-15 shadow-sm">
+  </div>
+
+  <mat-card-content class="mt-3 text-center">
+    <p class="fw-light">Email: {{ user.email }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button (click)="goBack()" class="btn btn-primary">Back</button>
+
+  <mat-card-actions class="d-flex justify-content-start">
+    <button mat-button (click)="goBack()" class="btn btn-primary px-4">Back</button>
   </mat-card-actions>
 </mat-card>
-
-
-
