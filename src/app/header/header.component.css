@@ -1,0 +1,55 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.app-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-right a {
+  text-decoration: none;
+}
+.git-hup{
+  color: black;
+}
+.linkedin{
+  color: blue;
+}
+.header-right a:hover {
+  color: #007bff;
+}
+
+.fa-icon {
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+.git-hup, .linkedin {
+  font-size: 2rem;
+}
