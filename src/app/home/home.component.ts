@@ -24,9 +24,36 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  faUser = fas['faUser'];
-@Input() users:User[] = [];
+//   faUser = fas['faUser'];
+// @Input() users:User[] = [];
+//   totalUsers = 0;
+
+//   constructor(private userService: UserService, private router: Router) {}
+
+//   ngOnInit() {
+//     this.loadUsers();
+//   }
+
+//   loadUsers(page = 1) {
+//     this.userService.getUsers(page).subscribe(data => {
+//       this.users = data.data;
+//       this.totalUsers = data.total;
+//     });
+//   }
+
+//   onPageChange(event: any) {
+//     this.loadUsers(event.pageIndex + 1);
+//   }
+
+//   viewUser(userId: number) {
+//     this.router.navigate([`/users/${userId}`]);
+//   }
+
+faUser = fas['faUser'];
+  @Input() users: User[] = [];
+  filteredUsers: User[] = [];
   totalUsers = 0;
+  searchQuery = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -37,8 +64,18 @@ export class HomeComponent {
   loadUsers(page = 1) {
     this.userService.getUsers(page).subscribe(data => {
       this.users = data.data;
+      this.filteredUsers = this.users;
       this.totalUsers = data.total;
     });
+  }
+
+  onSearch() {
+    const query = this.searchQuery.toLowerCase().trim();
+    this.filteredUsers = this.users.filter(user =>
+      user.first_name.toLowerCase().includes(query) ||
+      user.last_name.toLowerCase().includes(query) ||
+      user.id.toString() === query
+    );
   }
 
   onPageChange(event: any) {
